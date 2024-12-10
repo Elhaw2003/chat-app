@@ -1,17 +1,9 @@
-import 'package:chat_app/features/register/presentation/view/register_screen.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
-import 'core/utilities/routes.dart';
-import 'features/login/presentation/view/login_screen.dart';
-import 'firebase_options.dart';
+import 'core/utilities/go_routes_generator.dart';
 
 
-void main() async{
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+
+void main(){
   runApp(const ChatApp());
 }
 class ChatApp extends StatelessWidget {
@@ -19,13 +11,9 @@ class ChatApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      routes: {
-        Routes.registerScreen : (context)=> const RegisterScreen(),
-        Routes.loginScreen : (context)=> const LoginScreen(),
-      },
+    return   MaterialApp.router(
+      routerConfig: RouterGenerator.mainRoutingInOurApp,
       debugShowCheckedModeBanner: false,
-      initialRoute: "LoginScreen",
     );
   }
 }

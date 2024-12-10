@@ -12,7 +12,6 @@ class CustomTextField extends StatelessWidget {
         FocusManager.instance.primaryFocus!.unfocus();
       },
       decoration: InputDecoration(
-
         hintText: hintText,
         hintStyle: const TextStyle(
           color: AppColors.white,

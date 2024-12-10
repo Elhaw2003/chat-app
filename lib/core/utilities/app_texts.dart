@@ -6,4 +6,6 @@ class AppTexts{
   static const String doNotHaveAnAccount ="don't have an account";
   static const String signUp ="Sign Up";
   static const String alreadyHaveAccount ="Already Have An Account";
+  static const String chat ="Chat";
+  static const String sendMessage ="Send Message";
 }

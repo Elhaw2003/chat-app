@@ -1,7 +1,9 @@
+import 'package:chat_app/core/utilities/go_routes_generator.dart';
+import 'package:chat_app/core/utilities/routes.dart';
 import 'package:chat_app/core/widgets/custom_botton.dart';
 import 'package:chat_app/core/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
-
+import 'package:go_router/go_router.dart';
 import '../../../../../core/utilities/app_colors.dart';
 import '../../../../../core/utilities/app_texts.dart';
 import '../../../../login/presentation/view/widgets/dont_have_account_row_widget.dart';
@@ -47,7 +49,12 @@ class RegisterBody extends StatelessWidget {
           const SizedBox(height: 10,),
           const CustomTextField(hintText: AppTexts.password),
           const SizedBox(height: 20,),
-          const CustomButton(title: AppTexts.signUp),
+           CustomButton(
+            onTap: (){
+              context.pushNamed(AppRoutes.chatScreen);
+            },
+              title: AppTexts.signUp
+          ),
           const SizedBox(height: 20,),
           DoNotHaveAccountRowWidget(
             haveAccount: AppTexts.alreadyHaveAccount,

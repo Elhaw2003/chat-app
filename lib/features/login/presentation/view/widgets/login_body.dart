@@ -2,6 +2,7 @@
 import 'package:chat_app/core/widgets/custom_botton.dart';
 import 'package:chat_app/core/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../core/utilities/app_colors.dart';
 import '../../../../../core/utilities/app_texts.dart';
 import '../../../../../core/utilities/routes.dart';
@@ -54,9 +55,9 @@ class LoginBody extends StatelessWidget {
             haveAccount: AppTexts.doNotHaveAnAccount,
             loginOrSignUp: AppTexts.signUp,
             onPressed: (){
-              Navigator.pushNamed(context, Routes.registerScreen);
+              GoRouter.of(context).pushNamed(AppRoutes.registerScreen);
             },
-          )
+          ),
         ],
       ),
     );
